@@ -14,6 +14,7 @@
     "@types/node": "^16.7.13",
     "@types/react": "^17.0.20",
     "@types/react-dom": "^17.0.9",
+    "json-server": "^0.17.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
@@ -25,6 +26,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:server": "json-server --watch db.json --port 8000",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
