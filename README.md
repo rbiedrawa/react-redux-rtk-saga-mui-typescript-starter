@@ -38,3 +38,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## References
 
 * [React documentation](https://reactjs.org/)
+* [Redux Saga](https://redux-saga.js.org/)
+* [MUI: The React component library you always wanted](https://mui.com/)
+* [JSON Server](https://github.com/typicode/json-server)
