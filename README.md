@@ -41,3 +41,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 * [Redux Saga](https://redux-saga.js.org/)
 * [MUI: The React component library you always wanted](https://mui.com/)
 * [JSON Server](https://github.com/typicode/json-server)
+
+## Additional Links
+
+* [React Hook Form vs. Formik: A technical and performance comparison](https://blog.logrocket.com/react-hook-form-vs-formik-comparison/)
+* [React Hook Form - form builder](https://react-hook-form.com/form-builder)
+* [React Hook Form - typescript Support](https://react-hook-form.com/ts)

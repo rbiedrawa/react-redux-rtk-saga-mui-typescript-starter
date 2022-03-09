@@ -1,9 +1,10 @@
-import React, {useCallback, useEffect, useRef} from "react";
+import React, {useEffect} from "react";
 import {Provider, useDispatch, useSelector} from "react-redux";
 import {add, fetchPosts, remove, selectPostsState, store, update,} from "./redux/store";
+import {useForm} from 'react-hook-form';
 
 import './App.css';
-import {Button, Card, CardActions, CardContent, CardMedia, Grid, TextField} from "@mui/material";
+import {Button, Card, CardActions, CardContent, CardMedia, Grid} from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import AppBar from '@mui/material/AppBar';
 import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
@@ -13,8 +14,20 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import {FormTextField} from "./libs/ui/FormTextField";
+
 
 const theme = createTheme();
+
+interface CreateFormInput {
+    title: string;
+    body: string;
+}
+
+const createFormDefaultValues = {
+    title: "",
+    body: "",
+};
 
 function PostApp() {
     const dispatch = useDispatch();
@@ -24,15 +37,10 @@ function PostApp() {
         dispatch(fetchPosts());
     }, []);
 
-    const titleRef = useRef<HTMLInputElement>(null);
-    const bodyRef = useRef<HTMLInputElement>(null);
+    const methods = useForm<CreateFormInput>({defaultValues: createFormDefaultValues});
+    const {handleSubmit, reset, control} = methods;
 
-    const onAdd = useCallback(() => {
-        dispatch(add({id: Date.now(), title: titleRef.current!.value, body: bodyRef.current!.value}));
-        titleRef.current!.value = "";
-        bodyRef.current!.value = "";
-    }, [dispatch]);
-
+    const onAdd = (data: CreateFormInput) => dispatch(add({id: Date.now(), title: data!.title, body: data!.body}));
 
     return (
         <ThemeProvider theme={theme}>
@@ -70,9 +78,13 @@ function PostApp() {
                             spacing={1}
                             justifyContent="center"
                         >
-                            <TextField id="outlined-basic" label="title" inputRef={titleRef} variant="outlined"/>
-                            <TextField id="standard-basic" label="body" inputRef={bodyRef} variant="outlined"/>
-                            <Button variant="contained" onClick={onAdd}>Add new Post</Button>
+                            <FormTextField name="title" label="title" control={control}  rules={{
+                                required: "title can't be empty",
+                                maxLength: 10,
+                            }}/>
+                            <FormTextField name="body" label="body" control={control} />
+                            <Button onClick={handleSubmit(onAdd)} variant={"contained"}>Add new Post</Button>
+                            <Button onClick={() => reset()} variant={"outlined"}>Reset</Button>
                         </Stack>
                     </Container>
                 </Box>
