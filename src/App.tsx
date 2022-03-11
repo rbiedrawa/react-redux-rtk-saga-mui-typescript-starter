@@ -15,6 +15,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {FormTextField} from "./libs/ui/FormTextField";
+import * as Yup from 'yup';
+import {yupResolver} from "@hookform/resolvers/yup";
 
 
 const theme = createTheme();
@@ -29,6 +31,11 @@ const createFormDefaultValues = {
     body: "",
 };
 
+const newPostValidationSchema = Yup.object().shape({
+    title: Yup.string().required('Title can\'t be empty').max(10, 'Title must not exceed 10 characters'),
+    body: Yup.string().required('Body is required'),
+});
+
 function PostApp() {
     const dispatch = useDispatch();
     const posts = useSelector(selectPostsState);
@@ -37,7 +44,7 @@ function PostApp() {
         dispatch(fetchPosts());
     }, []);
 
-    const methods = useForm<CreateFormInput>({defaultValues: createFormDefaultValues});
+    const methods = useForm<CreateFormInput>({defaultValues: createFormDefaultValues, resolver: yupResolver(newPostValidationSchema)});
     const {handleSubmit, reset, control} = methods;
 
     const onAdd = (data: CreateFormInput) => dispatch(add({id: Date.now(), title: data!.title, body: data!.body}));
@@ -78,10 +85,7 @@ function PostApp() {
                             spacing={1}
                             justifyContent="center"
                         >
-                            <FormTextField name="title" label="title" control={control}  rules={{
-                                required: "title can't be empty",
-                                maxLength: 10,
-                            }}/>
+                            <FormTextField name="title" label="title" control={control}  />
                             <FormTextField name="body" label="body" control={control} />
                             <Button onClick={handleSubmit(onAdd)} variant={"contained"}>Add new Post</Button>
                             <Button onClick={() => reset()} variant={"outlined"}>Reset</Button>
