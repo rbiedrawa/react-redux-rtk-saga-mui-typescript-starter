@@ -39,6 +39,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 * [React documentation](https://reactjs.org/)
 * [Redux Saga](https://redux-saga.js.org/)
+* [Redux Style Guide](https://redux.js.org/style-guide/style-guide)
+* [Write Action Types as domain/eventName - Redux Style Guide](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname)
+* [Redux Toolkit](https://redux-toolkit.js.org/introduction/getting-started)
 * [MUI: The React component library you always wanted](https://mui.com/)
 * [JSON Server](https://github.com/typicode/json-server)
 
@@ -47,3 +50,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 * [React Hook Form vs. Formik: A technical and performance comparison](https://blog.logrocket.com/react-hook-form-vs-formik-comparison/)
 * [React Hook Form - form builder](https://react-hook-form.com/form-builder)
 * [React Hook Form - typescript Support](https://react-hook-form.com/ts)
+* [Redux Style Guide](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname)

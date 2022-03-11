@@ -1,7 +1,7 @@
 const BASE_URL = process.env.REACT_APP_POSTS_API_BASE_URL;
 
 export interface Post {
-    id: number
+    id?: string
     title: string
     body: string
 }

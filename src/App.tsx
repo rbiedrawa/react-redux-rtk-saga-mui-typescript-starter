@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
-import {Provider, useDispatch, useSelector} from "react-redux";
-import {add, fetchPosts, remove, selectPostsState, store, update,} from "./redux/store";
+import {Provider} from "react-redux";
 import {useForm} from 'react-hook-form';
 
 import './App.css';
@@ -17,6 +16,12 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {FormTextField} from "./libs/ui/FormTextField";
 import * as Yup from 'yup';
 import {yupResolver} from "@hookform/resolvers/yup";
+import {useAppDispatch, useAppSelector} from "./redux/hooks";
+import {
+    postsActions,
+    selectPosts
+} from "./redux/features/posts/posts.slice";
+import {store} from "./redux/store";
 
 
 const theme = createTheme();
@@ -37,17 +42,17 @@ const newPostValidationSchema = Yup.object().shape({
 });
 
 function PostApp() {
-    const dispatch = useDispatch();
-    const posts = useSelector(selectPostsState);
+    const dispatch = useAppDispatch();
+    const posts = useAppSelector(selectPosts);
 
     useEffect(() => {
-        dispatch(fetchPosts());
+        dispatch(postsActions.fetchAll());
     }, []);
 
     const methods = useForm<CreateFormInput>({defaultValues: createFormDefaultValues, resolver: yupResolver(newPostValidationSchema)});
     const {handleSubmit, reset, control} = methods;
 
-    const onAdd = (data: CreateFormInput) => dispatch(add({id: Date.now(), title: data!.title, body: data!.body}));
+    const onAdd = (data: CreateFormInput) => dispatch(postsActions.create({title: data!.title, body: data!.body}));
 
     return (
         <ThemeProvider theme={theme}>
@@ -114,8 +119,8 @@ function PostApp() {
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <Button size="small" onClick={() => dispatch(remove(post))}>Delete</Button>
-                                        <Button size="small" onClick={() => dispatch(update({
+                                        <Button size="small" onClick={() => dispatch(postsActions.delete(post))}>Delete</Button>
+                                        <Button size="small" onClick={() => dispatch(postsActions.update({
                                             ...post,
                                             body: `Updated at ${new Date().toISOString()}`
                                         }))}>Update</Button>
