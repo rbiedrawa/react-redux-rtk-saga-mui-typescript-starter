@@ -2,6 +2,7 @@ import createSagaMiddleware from "@redux-saga/core";
 import {configureStore} from "@reduxjs/toolkit";
 import {rootSaga} from "./rootSaga";
 import postsReducer from "./features/posts/posts.slice";
+import logger from 'redux-logger'
 
 import {createReduxHistoryContext} from "redux-first-history";
 import {createBrowserHistory} from 'history';
@@ -22,9 +23,11 @@ const makeStore = () => {
             router: routerReducer
         },
         middleware: (getDefaultMiddleware => {
+
             return getDefaultMiddleware({thunk: false,})
                 .concat(sagaMiddleware)
-                .concat(routerMiddleware);
+                .concat(routerMiddleware)
+                .concat(logger);
         })
     })
 

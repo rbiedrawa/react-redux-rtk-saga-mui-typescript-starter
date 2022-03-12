@@ -45,6 +45,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 * [MUI: The React component library you always wanted](https://mui.com/)
 * [React Router](https://reactrouter.com/)
 * [Redux First History](https://github.com/salvoravida/redux-first-history)
+* [Redux Logger](https://github.com/LogRocket/redux-logger)
 * [JSON Server](https://github.com/typicode/json-server)
 
 ## Additional Links
