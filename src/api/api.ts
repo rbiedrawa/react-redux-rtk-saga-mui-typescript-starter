@@ -1,4 +1,4 @@
-const BASE_URL = process.env.REACT_APP_POSTS_API_BASE_URL;
+import {Env} from "../constants/Env";
 
 export interface Post {
     id?: string
@@ -6,10 +6,10 @@ export interface Post {
     body: string
 }
 
-export const getPosts = async (): Promise<Post[]> => fetch(`${BASE_URL}`).then((res) => res.json());
+export const getPosts = async (): Promise<Post[]> => fetch(`${(Env.POSTS_API_BASE_URL)}`).then((res) => res.json());
 
 export const createPost = async (post: Post): Promise<Post> =>
-    fetch(`${BASE_URL}`, {
+    fetch(`${(Env.POSTS_API_BASE_URL)}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export const createPost = async (post: Post): Promise<Post> =>
     }).then((res) => res.json());
 
 export const updatePost = async (post: Post): Promise<Post> =>
-    fetch(`${BASE_URL}/${post.id}`, {
+    fetch(`${(Env.POSTS_API_BASE_URL)}/${post.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -27,6 +27,6 @@ export const updatePost = async (post: Post): Promise<Post> =>
     }).then((res) => res.json());
 
 export const deletePost = async (post: Post): Promise<Post> =>
-    fetch(`${BASE_URL}/${post.id}`, {
+    fetch(`${(Env.POSTS_API_BASE_URL)}/${post.id}`, {
         method: "DELETE",
     }).then(() => post);

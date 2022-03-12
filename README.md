@@ -43,6 +43,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 * [Write Action Types as domain/eventName - Redux Style Guide](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname)
 * [Redux Toolkit](https://redux-toolkit.js.org/introduction/getting-started)
 * [MUI: The React component library you always wanted](https://mui.com/)
+* [React Router](https://reactrouter.com/)
+* [Redux First History](https://github.com/salvoravida/redux-first-history)
 * [JSON Server](https://github.com/typicode/json-server)
 
 ## Additional Links

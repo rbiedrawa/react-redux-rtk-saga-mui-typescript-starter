@@ -7995,6 +7995,11 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
+redux-first-history@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/redux-first-history/-/redux-first-history-5.0.8.tgz#672ccee4837f2453d071f8e4c9e47137bc293152"
+  integrity sha512-JwTKQwEiIxhRk0g234+GlSQtiAUBcBOeHZJvY2YEFMO80ANTHme16Ip2a998hkhzGtKJxUKragOCUiGaTiwOHw==
+
 redux-saga@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-1.1.3.tgz#9f3e6aebd3c994bbc0f6901a625f9a42b51d1112"

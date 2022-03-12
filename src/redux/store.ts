@@ -3,17 +3,28 @@ import {configureStore} from "@reduxjs/toolkit";
 import {rootSaga} from "./rootSaga";
 import postsReducer from "./features/posts/posts.slice";
 
+import {createReduxHistoryContext} from "redux-first-history";
+import {createBrowserHistory} from 'history';
+import {Env} from "../constants/Env";
+
+const {createReduxHistory, routerMiddleware, routerReducer} = createReduxHistoryContext({
+    history: createBrowserHistory(),
+    reduxTravelling: Env.isDev(),
+    savePreviousLocations: 1
+});
+
 const makeStore = () => {
     const sagaMiddleware = createSagaMiddleware();
 
     const store = configureStore({
         reducer: {
-            'posts': postsReducer,
+            posts: postsReducer,
+            router: routerReducer
         },
         middleware: (getDefaultMiddleware => {
-            return getDefaultMiddleware({
-                thunk: false,
-            }).concat(sagaMiddleware);
+            return getDefaultMiddleware({thunk: false,})
+                .concat(sagaMiddleware)
+                .concat(routerMiddleware);
         })
     })
 
@@ -26,3 +37,5 @@ export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 
 export const store = makeStore();
+
+export const history = createReduxHistory(store);
