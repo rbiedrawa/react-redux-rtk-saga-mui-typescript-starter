@@ -46,6 +46,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 * [React Router](https://reactrouter.com/)
 * [Redux First History](https://github.com/salvoravida/redux-first-history)
 * [Redux Logger](https://github.com/LogRocket/redux-logger)
+* [I18next](https://react.i18next.com/)
 * [JSON Server](https://github.com/typicode/json-server)
 
 ## Additional Links

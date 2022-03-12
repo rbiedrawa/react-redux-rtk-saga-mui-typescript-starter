@@ -1,8 +1,19 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useForm} from 'react-hook-form';
 
 import '../App.css';
-import {Button, Card, CardActions, CardContent, CardMedia, Grid, Link} from "@mui/material";
+import {
+    Button,
+    ButtonGroup,
+    Card,
+    CardActions,
+    CardContent,
+    CardMedia,
+    FormControl, FormHelperText,
+    Grid,
+    InputLabel,
+    Link, MenuItem, Select
+} from "@mui/material";
 import AppBar from '@mui/material/AppBar';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
@@ -15,8 +26,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {useAppDispatch, useAppSelector} from "../redux/hooks";
 import {postsActions, selectPosts} from "../redux/features/posts/posts.slice";
 import { NavLink as RouterLink } from 'react-router-dom';
-
-
+import {useTranslation} from "react-i18next";
 
 interface CreateFormInput {
     title: string;
@@ -28,14 +38,15 @@ const createFormDefaultValues = {
     body: "",
 };
 
-const newPostValidationSchema = Yup.object().shape({
-    title: Yup.string().required('Title can\'t be empty').max(10, 'Title must not exceed 10 characters'),
-    body: Yup.string().required('Body is required'),
-});
-
 function Home() {
     const dispatch = useAppDispatch();
     const posts = useAppSelector(selectPosts);
+    const { t, i18n } = useTranslation();
+
+    const newPostValidationSchema = Yup.object().shape({
+        title: Yup.string().required(t('home.form.validation.title-required')).max(10, t('home.form.validation.title-max', {num: 10})),
+        body: Yup.string().required(t('home.form.validation.body-required')),
+    });
 
     useEffect(() => {
         dispatch(postsActions.fetchAll());
@@ -49,6 +60,11 @@ function Home() {
 
     const onAdd = (data: CreateFormInput) => dispatch(postsActions.create({title: data!.title, body: data!.body}));
 
+    // TODO: move state to redux
+    const onChangeLanguage = (lang: string) => {
+        i18n.changeLanguage(lang);
+    };
+
     return (
         <>
             <AppBar
@@ -59,7 +75,7 @@ function Home() {
             >
                 <Toolbar sx={{ flexWrap: 'wrap' }}>
                     <Typography variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-                        Company name
+                        {t("company.title")}
                     </Typography>
                     <nav>
                         <Link
@@ -69,7 +85,7 @@ function Home() {
                             color="text.primary"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            Home
+                            {t("navigation.links.home")}
                         </Link>
                         <Link
                             component={RouterLink}
@@ -78,8 +94,13 @@ function Home() {
                             color="text.primary"
                             sx={{ my: 1, mx: 1.5 }}
                         >
-                            About
+                            {t("navigation.links.about")}
                         </Link>
+                        <ButtonGroup  variant="text" color="inherit">
+                            <Button onClick={() => onChangeLanguage('en')}>🇺🇸</Button>
+                            <Button onClick={() => onChangeLanguage('pl')}>🇵🇱</Button>
+                        </ButtonGroup>
+
                     </nav>
                 </Toolbar>
             </AppBar>
@@ -99,7 +120,7 @@ function Home() {
                             color="text.primary"
                             gutterBottom
                         >
-                            Posts
+                            {t("home.title")}
                         </Typography>
                         <Stack
                             sx={{pt: 4}}
@@ -107,10 +128,10 @@ function Home() {
                             spacing={1}
                             justifyContent="center"
                         >
-                            <FormTextField name="title" label="title" control={control}/>
-                            <FormTextField name="body" label="body" control={control}/>
-                            <Button onClick={handleSubmit(onAdd)} variant={"contained"}>Add new Post</Button>
-                            <Button onClick={() => reset()} variant={"outlined"}>Reset</Button>
+                            <FormTextField name="title" label={t("home.form.title")} control={control}/>
+                            <FormTextField name="body" label={t("home.form.body")} control={control}/>
+                            <Button onClick={handleSubmit(onAdd)} variant={"contained"}>{t("home.buttons.submit")}</Button>
+                            <Button onClick={() => reset()} variant={"outlined"}>{t("home.buttons.reset")}</Button>
                         </Stack>
                     </Container>
                 </Box>
@@ -137,11 +158,11 @@ function Home() {
                                     </CardContent>
                                     <CardActions>
                                         <Button size="small"
-                                                onClick={() => dispatch(postsActions.delete(post))}>Delete</Button>
+                                                onClick={() => dispatch(postsActions.delete(post))}>{t("home.buttons.delete")}</Button>
                                         <Button size="small" onClick={() => dispatch(postsActions.update({
                                             ...post,
                                             body: `Updated at ${new Date().toISOString()}`
-                                        }))}>Update</Button>
+                                        }))}>{t("home.buttons.update")}</Button>
                                     </CardActions>
                                 </Card>
                             </Grid>

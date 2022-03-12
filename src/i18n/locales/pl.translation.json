@@ -1,0 +1,33 @@
+{
+  "home": {
+    "title": "Posts",
+    "form": {
+      "title": "tytuł",
+      "body": "treść",
+      "validation": {
+        "title-required": "tytuł nie może być pusty",
+        "title-max": "tytuł nie może przekroczyć {{num}} znaków",
+        "body-required": "treść nie może być pusta"
+      }
+    },
+    "buttons": {
+      "submit": "Dodaj nowy Post",
+      "reset": "Resetuj",
+      "delete": "Usuń",
+      "update": "Edytuj"
+    }
+  },
+  "about": {
+    "title": "O Nas",
+    "back": "Powrót do Strony Domowej"
+  },
+  "company": {
+    "title": "Nazwa Firmy"
+  },
+  "navigation": {
+    "links": {
+      "home": "Strona Domowa",
+      "about": "O Nas"
+    }
+  }
+}

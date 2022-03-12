@@ -1,0 +1,33 @@
+{
+  "home": {
+    "title": "Posts",
+    "form": {
+      "title": "title",
+      "body": "body",
+      "validation": {
+        "title-required": "title can't be empty",
+        "title-max": "title must not exceed {{num}} characters",
+        "body-required": "body can't be empty"
+      }
+    },
+    "buttons": {
+      "submit": "Add new Post",
+      "reset": "Reset",
+      "delete": "Delete",
+      "update": "Update"
+    }
+  },
+  "about": {
+    "title": "About Page",
+    "back": "Back to Home"
+  },
+  "company": {
+    "title": "Company name"
+  },
+  "navigation": {
+    "links": {
+      "home": "Home",
+      "about": "About"
+    }
+  }
+}
