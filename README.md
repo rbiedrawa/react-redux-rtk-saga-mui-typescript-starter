@@ -56,3 +56,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 * [React Hook Form - form builder](https://react-hook-form.com/form-builder)
 * [React Hook Form - typescript Support](https://react-hook-form.com/ts)
 * [Redux Style Guide](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname)
+* [MUI - theme switcher](https://mui.com/customization/dark-mode/)

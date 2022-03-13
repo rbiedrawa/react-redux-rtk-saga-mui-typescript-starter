@@ -1,19 +1,26 @@
 import React from "react";
 
-import {Button, ButtonGroup, Link} from "@mui/material";
+import {Button, ButtonGroup, IconButton, Link} from "@mui/material";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {NavLink as RouterLink} from 'react-router-dom';
 import {useTranslation} from "react-i18next";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import {Theme} from "@mui/material/styles/createTheme";
 
-const Header = () => {
-    const {t, i18n} = useTranslation();
 
-    // TODO: move state to redux
-    const onChangeLanguage = (lang: string) => {
-        i18n.changeLanguage(lang);
-    };
+type HeaderProps = {
+    currentThemeMode: string
+    onChangeThemeClick: () => void
+    onChangeLanguage: (lang: string) => void
+}
+
+const Header = (props: HeaderProps) => {
+    const {t} = useTranslation();
+
+    const {currentThemeMode, onChangeThemeClick, onChangeLanguage} = props;
 
     return (
         <>
@@ -50,6 +57,9 @@ const Header = () => {
                             <Button onClick={() => onChangeLanguage('en')}>🇺🇸</Button>
                             <Button onClick={() => onChangeLanguage('pl')}>🇵🇱</Button>
                         </ButtonGroup>
+                        <IconButton sx={{ ml: 1 }} onClick={onChangeThemeClick} color="inherit">
+                            {currentThemeMode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                        </IconButton>
                     </nav>
                 </Toolbar>
             </AppBar>
