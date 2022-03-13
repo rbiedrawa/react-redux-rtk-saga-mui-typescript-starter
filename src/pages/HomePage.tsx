@@ -1,19 +1,19 @@
-import React from "react";
+import React from 'react'
 
-import '../App.css';
-import {useTranslation} from "react-i18next";
-import TitleTypography from "../libs/ui/TitleTypography";
-import PostContainer from "../containers/PostContainer";
+import '../App.css'
+import { useTranslation } from 'react-i18next'
+import TitleTypography from '../libs/ui/TitleTypography'
+import PostContainer from '../containers/PostContainer'
 
-function HomePage() {
-    const {t} = useTranslation();
+const HomePage = () => {
+  const { t } = useTranslation()
 
-    return (
-        <>
-            <TitleTypography value={t("home.title")}/>
-            <PostContainer/>
-        </>
-    );
+  return (
+    <>
+      <TitleTypography value={t('home.title')} />
+      <PostContainer />
+    </>
+  )
 }
 
-export default HomePage;
+export default HomePage

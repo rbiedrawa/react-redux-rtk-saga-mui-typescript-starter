@@ -1,1 +1,1 @@
-export * from "./usePostService"
+export * from './usePostService'

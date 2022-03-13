@@ -1,15 +1,15 @@
-import {Post} from "../libs/models/post.model";
-import {useAppDispatch, useAppSelector} from "../store/hooks";
-import {postsActions, selectPosts} from "../store/features/posts/posts.slice";
-import {useCallback, useEffect} from "react";
-import {PostFormInput} from "../components/Posts/PostForm";
+import { useCallback } from 'react'
+import { Post } from '../libs/models/post.model'
+import { useAppDispatch, useAppSelector } from '../store/hooks'
+import { postsActions, selectPosts } from '../store/features/posts/posts.slice'
+import { PostFormInput } from '../components/Posts/PostForm'
 
 type PostServiceOperators = {
-    posts: Post[],
-    createPost: (data: PostFormInput) => void,
-    fetchAllPosts: () => void
-    deletePost: (post: Post) => void,
-    updatePost: (post: Post) => void,
+  posts: Post[]
+  createPost: (data: PostFormInput) => void
+  fetchAllPosts: () => void
+  deletePost: (post: Post) => void
+  updatePost: (post: Post) => void
 }
 
 /**
@@ -17,25 +17,38 @@ type PostServiceOperators = {
  * @see https://reactjs.org/docs/hooks-custom.html
  */
 export const usePostService = (): Readonly<PostServiceOperators> => {
-    const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
-    return {
-        posts: useAppSelector(selectPosts),
+  return {
+    posts: useAppSelector(selectPosts),
 
-        createPost: useCallback((post: PostFormInput) => {
-            dispatch(postsActions.create({title: post!.title, body: post!.body}))
-        }, [dispatch]),
-        fetchAllPosts: useCallback(() => {
-            dispatch(postsActions.fetchAll())
-        }, [dispatch]),
-        deletePost: useCallback((post: Post) => {
-            dispatch(postsActions.delete(post))
-        }, [dispatch]),
-        updatePost: useCallback((post: Post) => {
-            dispatch(postsActions.update({
-                ...post,
-                body: `Updated at ${new Date().toISOString()}`
-            }))
-        }, [dispatch]),
-    }
+    createPost: useCallback(
+      (post: PostFormInput) => {
+        dispatch(postsActions.create({ title: post.title, body: post.body }))
+      },
+      [dispatch],
+    ),
+    fetchAllPosts: useCallback(() => {
+      dispatch(postsActions.fetchAll())
+    }, [dispatch]),
+    deletePost: useCallback(
+      (post: Post) => {
+        dispatch(postsActions.delete(post))
+      },
+      [dispatch],
+    ),
+    updatePost: useCallback(
+      (post: Post) => {
+        dispatch(
+          postsActions.update({
+            ...post,
+            body: `Updated at ${new Date().toISOString()}`,
+          }),
+        )
+      },
+      [dispatch],
+    ),
+  }
 }
+
+export default usePostService

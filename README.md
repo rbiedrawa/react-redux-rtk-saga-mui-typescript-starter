@@ -35,6 +35,44 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+
+## Code Quality
+
+### ESLint and Prettier
+
+Running the script `yarn format` will format the code style of all TypeScript files.
+
+The script `yarn lint` will run linter in the project. 
+If any best practices, standards, or code styles are not meet in code, it will display the actual error or warning.
+
+Run `yarn lint:fix` command to fix automatically any error found (if the linter knows how to fix it😉) and format code. 
+
+### Commit hooks
+
+Enforce code conventions and prevent bad commits with Husky pre-commit hook.
+
+To install and configure Husky, run: 
+```shell
+npx husky install
+```
+
+To automatically run linter on staged files, run below command to install pre commit hook. 
+    
+```shell
+npx husky add .husky/pre-commit "yarn lint-staged"
+```
+
+To enforce conventional commit format on git messages, run below command to use commitlint. 
+```shell
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
+```
+
+
+## Release
+
+[//]: # (TODO:  add readme for release via Standard Version)
+
+
 ## References
 
 * [React documentation](https://reactjs.org/)
@@ -48,6 +86,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 * [Redux Logger](https://github.com/LogRocket/redux-logger)
 * [I18next](https://react.i18next.com/)
 * [JSON Server](https://github.com/typicode/json-server)
+* [ESLint](https://eslint.org/)
+* [Prettier](https://prettier.io/)
+* [Husky](https://typicode.github.io/husky/#/)
+* [commitlint](https://commitlint.js.org/#/) - Lint commit messages
+* [Standard Version](https://github.com/conventional-changelog/standard-version) - A utility for versioning using semver and CHANGELOG generation powered by Conventional Commits.
 
 ## Additional Links
 
