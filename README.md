@@ -51,6 +51,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Additional Links
 
+* [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react) - Cheatsheets for experienced React developers getting started with TypeScript
 * [React Hook Form vs. Formik: A technical and performance comparison](https://blog.logrocket.com/react-hook-form-vs-formik-comparison/)
 * [React Hook Form - form builder](https://react-hook-form.com/form-builder)
 * [React Hook Form - typescript Support](https://react-hook-form.com/ts)

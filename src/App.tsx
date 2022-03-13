@@ -2,7 +2,7 @@ import React from "react";
 import {Provider} from "react-redux";
 
 import './App.css';
-import {history, store} from "./redux/store";
+import {history, store} from "./store/store";
 import {createTheme} from '@mui/material/styles';
 import AppRoutes from "./routes";
 import {ThemeProvider} from "@emotion/react";

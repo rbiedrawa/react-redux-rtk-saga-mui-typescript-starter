@@ -1,12 +1,16 @@
 import {Route, Routes} from 'react-router-dom';
-import Home from "../pages/Home";
-import About from "../pages/About";
+import HomePage from "../pages/HomePage";
+import AboutPage from "../pages/AboutPage";
+import Layout from "../components/Layout";
 
 const AppRoutes = () => (
     <>
         <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/about' element={<About/>}/>
+            <Route element={<Layout/>}>
+                <Route path='/' element={<HomePage/>}/>
+                <Route path='/posts' element={<HomePage/>}/>
+                <Route path='/about' element={<AboutPage/>}/>
+            </Route>
         </Routes>
     </>
 );

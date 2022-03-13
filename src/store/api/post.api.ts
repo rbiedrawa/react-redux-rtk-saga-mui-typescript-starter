@@ -1,10 +1,5 @@
-import {Env} from "../constants/Env";
-
-export interface Post {
-    id?: string
-    title: string
-    body: string
-}
+import {Env} from "../../constants/Env";
+import {Post} from "../../libs/models/post.model";
 
 export const getPosts = async (): Promise<Post[]> => fetch(`${(Env.POSTS_API_BASE_URL)}`).then((res) => res.json());
 

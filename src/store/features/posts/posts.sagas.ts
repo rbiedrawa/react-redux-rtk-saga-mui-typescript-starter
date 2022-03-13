@@ -1,6 +1,7 @@
-import {createPost, deletePost, getPosts, Post, updatePost} from "../../../api/api";
+import {createPost, deletePost, getPosts, updatePost} from "../../api/post.api";
 import {put, takeEvery} from "redux-saga/effects";
 import {postsActions} from "./posts.slice";
+import {Post} from "../../../libs/models/post.model";
 
 // Worker Sagas
 function* onGetPosts() {
