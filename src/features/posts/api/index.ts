@@ -1,5 +1,5 @@
-import { Env } from '../../constants/Env'
-import { Post } from '../../libs/models/post.model'
+import { Env } from '../../../config/Env'
+import { Post } from '../types'
 
 export const getPosts = async (): Promise<Post[]> =>
   fetch(`${Env.POSTS_API_BASE_URL}`).then(res => res.json())

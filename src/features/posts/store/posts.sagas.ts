@@ -1,7 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects'
 
-import { Post } from '../../../libs/models/post.model'
-import { createPost, deletePost, getPosts, updatePost } from '../../api/post.api'
+import { createPost, deletePost, getPosts, updatePost } from '../api'
+import { Post } from '../types'
 
 import { postsActions } from './posts.slice'
 

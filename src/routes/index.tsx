@@ -1,18 +1,22 @@
+import React, { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import Layout from '../components/Layout'
-import AboutPage from '../pages/AboutPage'
-import HomePage from '../pages/HomePage'
+
+const HomePage = React.lazy(() => import('../pages/HomePage'))
+const AboutPage = React.lazy(() => import('../pages/AboutPage'))
 
 const AppRoutes = () => (
   <>
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/posts" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Route>
-    </Routes>
+    <Suspense fallback={<div>Loading</div>}>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/posts" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Route>
+      </Routes>
+    </Suspense>
   </>
 )
 

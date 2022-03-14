@@ -1,11 +1,12 @@
 import Container from '@mui/material/Container'
 import React, { useEffect } from 'react'
 
-import PostForm from '../components/Posts/PostForm'
-import PostList from '../components/Posts/PostList'
 import { usePostService } from '../hooks'
 
-const PostContainer = () => {
+import { PostForm } from './PostForm'
+import { PostList } from './PostList'
+
+export const PostContainer = () => {
   const { posts, deletePost, updatePost, fetchAllPosts, createPost } = usePostService()
 
   useEffect(() => {
@@ -22,5 +23,3 @@ const PostContainer = () => {
     </>
   )
 }
-
-export default PostContainer

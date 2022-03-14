@@ -6,19 +6,15 @@ import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import * as Yup from 'yup'
 
-import { FormTextField } from '../../libs/ui/FormTextField'
+import { FormTextField } from '../../../libs/ui/components/FormTextField'
+import { PostFormInput } from '../types'
 
-type PostFormProps = {
+export type PostFormProps = {
   defaultValues?: PostFormInput
   onSubmitClick(data: PostFormInput): void
 }
 
-export interface PostFormInput {
-  title: string
-  body: string
-}
-
-const PostForm = (props: PostFormProps) => {
+export const PostForm = (props: PostFormProps) => {
   const { t } = useTranslation()
 
   const {
@@ -55,5 +51,3 @@ const PostForm = (props: PostFormProps) => {
     </Stack>
   )
 }
-
-export default PostForm

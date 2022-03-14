@@ -1,11 +1,10 @@
 import { useCallback } from 'react'
 
-import { PostFormInput } from '../components/Posts/PostForm'
-import { Post } from '../libs/models/post.model'
-import { postsActions, selectPosts } from '../store/features/posts/posts.slice'
-import { useAppDispatch, useAppSelector } from '../store/hooks'
+import { useAppDispatch, useAppSelector } from '../../../store/hooks'
+import { postsActions, selectPosts } from '../store'
+import { Post, PostFormInput } from '../types'
 
-type PostServiceOperators = {
+export type PostServiceOperators = {
   posts: Post[]
   createPost: (data: PostFormInput) => void
   fetchAllPosts: () => void

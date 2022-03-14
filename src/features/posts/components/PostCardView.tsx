@@ -3,15 +3,16 @@ import Typography from '@mui/material/Typography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Post } from '../../libs/models/post.model'
+import logoImage from '../assets/imgs/logo192.png'
+import { Post } from '../types'
 
-type PostCardViewProps = {
+export type PostCardViewProps = {
   post: Post
   onDeleteClick: (post: Post) => void
   onUpdateClick: (post: Post) => void
 }
 
-const PostCardView = (props: PostCardViewProps) => {
+export const PostCardView = (props: PostCardViewProps) => {
   const { t } = useTranslation()
 
   const { post, onDeleteClick, onUpdateClick } = props
@@ -25,7 +26,7 @@ const PostCardView = (props: PostCardViewProps) => {
   return (
     <>
       <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-        <CardMedia component="img" image="https://source.unsplash.com/random" alt="random" />
+        <CardMedia component="img" src={logoImage} alt="random" />
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography gutterBottom variant="h5" component="h2">
             {post.title}
@@ -44,5 +45,3 @@ const PostCardView = (props: PostCardViewProps) => {
     </>
   )
 }
-
-export default PostCardView

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './App'
-import './i18n'
+import './config/i18n'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
 

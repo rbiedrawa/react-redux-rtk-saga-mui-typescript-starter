@@ -2,6 +2,34 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Structure
+
+```shell
+./src
+├── assets # assets folder contains all the static files (images, fonts, etc).
+├── components # shared components
+├── config # global configuration, env variables etc.
+│   ├── Env.ts
+│   └── i18n 
+├── features
+│   ├── feature # 'feature'
+│   │   ├── api # API folder contains http service calls 
+│   │   ├── assets # 'feature' assets folder
+│   │   ├── components # 'feature' components
+│   │   ├── hooks # 'feature' hooks
+│   │   ├── index.ts # entry point for 'feature' public API
+│   │   ├── store # 'feature' state stores contains slices, sagas, etc.
+│   │   └── types # 'feature' typescript types  
+│   └── another_feature # 'another_feature'
+├── hooks # shared hooks
+├── libs  # libraries imported or exported that can be used in different projects 
+│   └── ui
+├── pages  # contains all application pages
+├── routes # routes configuration
+├──  store # root store and store settings
+└── App.tsx # Application entrypoint  
+```
+
 ## Getting Started
 
 ### Development
@@ -72,7 +100,6 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 
 [//]: # (TODO:  add readme for release via Standard Version)
 
-
 ## References
 
 * [React documentation](https://reactjs.org/)
@@ -101,3 +128,4 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 * [Redux Style Guide](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname)
 * [MUI - theme switcher](https://mui.com/customization/dark-mode/)
 * [Level up your CSS linting using Stylelint](https://blog.logrocket.com/using-stylelint-improve-lint-css-scss-sass/)
+* [Create React App: A quick setup guide](https://blog.logrocket.com/create-react-app-a-quick-setup-guide-b812f0aad03c/)

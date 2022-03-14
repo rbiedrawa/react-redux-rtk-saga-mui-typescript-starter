@@ -1,17 +1,17 @@
 import { Grid } from '@mui/material'
 import React from 'react'
 
-import { Post } from '../../libs/models/post.model'
+import { Post } from '../types'
 
-import PostCardView from './PostCardView'
+import { PostCardView } from './PostCardView'
 
-type PostListProps = {
+export type PostListProps = {
   posts: Post[]
   onDeletePost: (post: Post) => void
   onUpdatePost: (post: Post) => void
 }
 
-const PostList = (props: PostListProps) => {
+export const PostList = (props: PostListProps) => {
   const { posts, onDeletePost, onUpdatePost } = props
 
   return (
@@ -26,5 +26,3 @@ const PostList = (props: PostListProps) => {
     </>
   )
 }
-
-export default PostList
