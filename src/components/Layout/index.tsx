@@ -1,9 +1,10 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Box from '@mui/material/Box'
 import { CssBaseline, ThemeProvider } from '@mui/material'
+import Box from '@mui/material/Box'
 import { createTheme } from '@mui/material/styles'
+import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Outlet } from 'react-router-dom'
+
 import Header from '../Headers/Header'
 
 const Layout = () => {

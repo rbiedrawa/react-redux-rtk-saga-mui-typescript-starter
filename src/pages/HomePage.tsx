@@ -1,9 +1,9 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import '../App.css'
-import { useTranslation } from 'react-i18next'
-import TitleTypography from '../libs/ui/TitleTypography'
 import PostContainer from '../containers/PostContainer'
+import TitleTypography from '../libs/ui/TitleTypography'
 
 const HomePage = () => {
   const { t } = useTranslation()

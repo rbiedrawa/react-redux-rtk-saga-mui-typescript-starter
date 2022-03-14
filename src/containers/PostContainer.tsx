@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
 import Container from '@mui/material/Container'
-import PostList from '../components/Posts/PostList'
+import React, { useEffect } from 'react'
+
 import PostForm from '../components/Posts/PostForm'
+import PostList from '../components/Posts/PostList'
 import { usePostService } from '../hooks'
 
 const PostContainer = () => {

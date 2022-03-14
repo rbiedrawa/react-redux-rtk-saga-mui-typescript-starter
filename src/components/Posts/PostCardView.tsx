@@ -2,6 +2,7 @@ import { Button, Card, CardActions, CardContent, CardMedia } from '@mui/material
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+
 import { Post } from '../../libs/models/post.model'
 
 type PostCardViewProps = {
