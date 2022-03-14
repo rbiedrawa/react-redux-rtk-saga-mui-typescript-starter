@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import TitleTypography from "../libs/ui/TitleTypography";
+import TitleTypography from '../libs/ui/TitleTypography'
 
 const AboutPage = () => {
   const { t } = useTranslation()

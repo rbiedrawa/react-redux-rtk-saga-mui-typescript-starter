@@ -25,11 +25,15 @@ const Layout = () => {
     [],
   )
 
-  const theme = React.useMemo(() => createTheme({
-    palette: {
-      mode,
-    },
-  }), [mode])
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode],
+  )
 
   return (
     <>

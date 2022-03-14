@@ -13,8 +13,8 @@ type PostFormProps = {
 }
 
 export interface PostFormInput {
-  title: string;
-  body: string;
+  title: string
+  body: string
 }
 
 const PostForm = (props: PostFormProps) => {

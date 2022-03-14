@@ -1,0 +1,16 @@
+{
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-styled-components", "stylelint-config-prettier"],
+  "customSyntax": "postcss-scss",
+  "rules": {
+    "alpha-value-notation": "number",
+    "selector-type-case": ["lower", { "ignoreTypes": ["/^\\$\\w+/"] }],
+    "selector-type-no-unknown": [true, { "ignoreTypes": ["/-styled-mixin/", "/^\\$\\w+/"] }],
+    "string-quotes": null,
+    "selector-class-pattern": null,
+    "declaration-colon-newline-after": null,
+    "value-keyword-case": ["lower", {
+      "ignoreKeywords": ["dummyValue"]
+    }]
+  }
+}

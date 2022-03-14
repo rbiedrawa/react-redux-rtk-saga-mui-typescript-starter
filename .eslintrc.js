@@ -33,16 +33,10 @@ module.exports = {
     },
   },
   "rules": {
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
+    'import/no-extraneous-dependencies': 0,
+    'import/extensions': 0,
+    'import/no-unresolved': 0,
+    'import/prefer-default-export': 0,
     "react/function-component-definition": [
       2,
       {
@@ -54,7 +48,8 @@ module.exports = {
     "no-param-reassign": 0,
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/no-explicit-any": "error"
+    "@typescript-eslint/no-explicit-any": "error",
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
   },
   parserOptions: {
     sourceType: 'module',

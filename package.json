@@ -45,8 +45,10 @@
     "coverage": "react-scripts test --coverage",
     "format": "prettier --write 'src'",
     "eslint": "eslint --ext ts,tsx",
-    "lint": "yarn eslint src",
+    "lint": "yarn lint:css && yarn eslint src",
     "lint:fix": "yarn lint --fix",
+    "lint:css": "stylelint './src/**/*.{jsx,js,tsx,ts}'",
+    "postinstall": "husky install",
     "release": "standard-version --no-verify",
     "release:first-release": "standard-version --first-release --no-verify",
     "release:dry-run": "standard-version --dry-run --no-verify"
@@ -84,14 +86,20 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "4.3.0",
+    "husky": "7.0.4",
     "lint-staged": "12.3.5",
+    "postcss-scss": "4.0.3",
     "prettier": "2.5.1",
-    "standard-version": "9.3.2"
+    "standard-version": "9.3.2",
+    "stylelint": "14.5.3",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-standard-scss": "3.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-processor-styled-components": "1.10.0"
   },
   "lint-staged": {
-    "src/**/*.ts": [
-      "prettier --write",
-      "eslint --fix"
+    "src/*.{tsx,ts,js,jsx}": [
+      "yarn lint"
     ]
   }
 }

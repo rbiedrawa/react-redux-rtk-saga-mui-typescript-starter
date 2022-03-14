@@ -100,3 +100,4 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 * [React Hook Form - typescript Support](https://react-hook-form.com/ts)
 * [Redux Style Guide](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname)
 * [MUI - theme switcher](https://mui.com/customization/dark-mode/)
+* [Level up your CSS linting using Stylelint](https://blog.logrocket.com/using-stylelint-improve-lint-css-scss-sass/)
