@@ -118,7 +118,7 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 * [Husky](https://typicode.github.io/husky/#/)
 * [commitlint](https://commitlint.js.org/#/) - Lint commit messages
 * [Standard Version](https://github.com/conventional-changelog/standard-version) - A utility for versioning using semver and CHANGELOG generation powered by Conventional Commits.
-
+* [Mock Service Worker](https://mswjs.io/)
 * [Redux Saga Test Plan](https://github.com/jfairbank/redux-saga-test-plan) - Redux Saga Test Plan aims to embrace both integration testing and unit testing approaches to make testing your sagas easy.
 
 ## Additional Links
@@ -132,3 +132,5 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 * [Level up your CSS linting using Stylelint](https://blog.logrocket.com/using-stylelint-improve-lint-css-scss-sass/)
 * [Create React App: A quick setup guide](https://blog.logrocket.com/create-react-app-a-quick-setup-guide-b812f0aad03c/)
 * [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
+* [Bulletproof React](https://github.com/alan2207/bulletproof-react)
+* [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet)

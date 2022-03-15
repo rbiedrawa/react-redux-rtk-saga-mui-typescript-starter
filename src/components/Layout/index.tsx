@@ -5,7 +5,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Outlet } from 'react-router-dom'
 
-import Header from '../Headers/Header'
+import Header from '../Header/Header'
 
 const Layout = () => {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light')

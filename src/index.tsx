@@ -5,6 +5,9 @@ import App from './App'
 import './config/i18n'
 import './index.css'
 import reportWebVitals from './reportWebVitals'
+import { initMockServiceWorker } from './test/server'
+
+initMockServiceWorker()
 
 ReactDOM.render(
   <React.StrictMode>

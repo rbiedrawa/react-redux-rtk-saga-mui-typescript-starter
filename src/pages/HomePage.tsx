@@ -10,7 +10,7 @@ const HomePage = () => {
 
   return (
     <>
-      <TitleTypography value={t('home.title')} />
+      <TitleTypography title={t('home.title')} />
       <PostContainer />
     </>
   )
