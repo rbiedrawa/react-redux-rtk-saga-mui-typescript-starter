@@ -4,7 +4,7 @@ import { createAction, createSlice, nanoid, PayloadAction } from '@reduxjs/toolk
 import type { RootState } from '../../../store/store'
 import { Post } from '../types'
 
-interface PostsState {
+export interface PostsState {
   posts: Post[]
 }
 

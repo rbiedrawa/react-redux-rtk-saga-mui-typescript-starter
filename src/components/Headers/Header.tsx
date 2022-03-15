@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 import { NavLink as RouterLink } from 'react-router-dom'
 
 type HeaderProps = {
-  currentThemeMode: string
+  currentThemeMode: 'light' | 'dark'
   onChangeThemeClick: () => void
   onChangeLanguage: (lang: string) => void
 }

@@ -32,7 +32,13 @@ module.exports = {
       ],
     },
   },
-  "rules": {
+  'rules': {
+    'jest/expect-expect': [
+      'error',
+      {
+        assertFunctionNames: ['expect', 'testSaga', 'expectSaga'],
+      },
+    ],
     'import/order': [
       'error',
       {
@@ -66,7 +72,6 @@ module.exports = {
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
   },
   parserOptions: {
     sourceType: 'module',
