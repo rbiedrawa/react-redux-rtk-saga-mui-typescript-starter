@@ -1,7 +1,6 @@
 import fixture from '../../../../test/server/db.initial.data.json'
 import { getPosts } from '../index'
 
-
 describe('Post API test - MSW example', () => {
   it('should fetch all Posts', async () => {
     // Given

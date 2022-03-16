@@ -61,7 +61,6 @@ describe('Selectors tests', () => {
   })
 })
 
-
 const expectedSagaPosts: Post[] = [{ id: '1', title: 'saga', body: 'saga' }]
 
 jest.mock('../../api/index', () => ({

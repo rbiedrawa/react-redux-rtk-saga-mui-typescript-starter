@@ -28,7 +28,7 @@ export const PostForm = (props: PostFormProps) => {
   const newPostValidationSchema = Yup.object().shape({
     title: Yup.string()
       .required(t('home.form.validation.title-required'))
-      .max(10, t('home.form.validation.title-max', { num: 10 })),
+      .max(20, t('home.form.validation.title-max', { num: 20 })),
     body: Yup.string().required(t('home.form.validation.body-required')),
   })
 

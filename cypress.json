@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "env": {
+    "HELLO_FROM_ENV_FILE": "Hello from Cypress Env file!!!"
+  }
+}
