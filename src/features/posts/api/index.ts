@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Env } from '../../../config/Env'
-import { Post } from '../types'
+import { Env } from 'config/Env'
+import { Post } from 'features/posts/types'
 
 const POSTS_BASE_URL = `${Env.API_BASE_URL}/posts`
 

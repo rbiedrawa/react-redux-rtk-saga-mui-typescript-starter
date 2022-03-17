@@ -2,7 +2,7 @@ import { Container } from '@mui/material'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { PostContainer } from './PostContainer'
+import { PostContainer } from 'features/posts/components/PostContainer'
 
 export default {
   title: 'features/components/posts/PostContainer',

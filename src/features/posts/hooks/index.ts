@@ -1,1 +1,1 @@
-export * from './usePostService'
+export * from 'features/posts/hooks/usePostService'

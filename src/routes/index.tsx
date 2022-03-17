@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
-import Layout from '../components/Layout'
+import Layout from 'components/Layout'
 
-const HomePage = React.lazy(() => import('../pages/HomePage'))
-const AboutPage = React.lazy(() => import('../pages/AboutPage'))
+const HomePage = React.lazy(() => import('pages/HomePage'))
+const AboutPage = React.lazy(() => import('pages/AboutPage'))
 
 const AppRoutes = () => (
   <>

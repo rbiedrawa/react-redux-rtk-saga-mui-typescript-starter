@@ -1,2 +1,2 @@
-export * from './posts.sagas'
-export * from './posts.slice'
+export * from 'features/posts/store/posts.sagas'
+export * from 'features/posts/store/posts.slice'

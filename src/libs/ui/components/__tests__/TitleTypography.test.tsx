@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 
-import TitleTypography from '../TitleTypography'
+import TitleTypography from 'libs/ui/components/TitleTypography'
 
 describe('Title Typography - component tests', () => {
   it('should display correctly title', async () => {

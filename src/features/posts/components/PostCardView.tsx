@@ -3,8 +3,8 @@ import Typography from '@mui/material/Typography'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import logoImage from '../assets/imgs/logo192.png'
-import { Post } from '../types'
+import logoImage from 'features/posts/assets/imgs/logo192.png'
+import { Post } from 'features/posts/types'
 
 export type PostCardViewProps = {
   post: Post

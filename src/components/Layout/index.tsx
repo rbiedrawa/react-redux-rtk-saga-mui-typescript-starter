@@ -5,11 +5,10 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Outlet } from 'react-router-dom'
 
-import Header from '../Header/Header'
+import Header from 'components/Header/Header'
 
 const Layout = () => {
   const [mode, setMode] = React.useState<'light' | 'dark'>('light')
-
   const { i18n } = useTranslation()
 
   // TODO: move state to redux

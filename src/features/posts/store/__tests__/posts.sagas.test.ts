@@ -2,10 +2,10 @@ import { nanoid } from '@reduxjs/toolkit'
 import { expectSaga, testSaga } from 'redux-saga-test-plan'
 import { call } from 'redux-saga-test-plan/matchers'
 
-import { getPosts } from '../../api'
-import { Post } from '../../types'
-import { onGetPosts } from '../posts.sagas'
-import postsReducer, { postsActions } from '../posts.slice'
+import { getPosts } from 'features/posts/api'
+import { onGetPosts } from 'features/posts/store/posts.sagas'
+import postsReducer, { postsActions } from 'features/posts/store/posts.slice'
+import { Post } from 'features/posts/types'
 
 const expectedSagaPosts: Post[] = [{ id: '1', title: 'saga-test-example', body: nanoid() }]
 

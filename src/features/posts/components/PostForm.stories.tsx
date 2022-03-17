@@ -2,7 +2,7 @@ import { Container } from '@mui/material'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { PostForm } from './PostForm'
+import { PostForm } from 'features/posts/components/PostForm'
 
 export default {
   title: 'features/components/posts/PostForm',

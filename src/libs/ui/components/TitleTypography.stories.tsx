@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import React from 'react'
 
-import TitleTypography from './TitleTypography'
+import TitleTypography from 'libs/ui/components/TitleTypography'
 
 export default {
   title: 'UI/components/TitleTypography',

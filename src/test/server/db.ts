@@ -1,9 +1,8 @@
 import { factory, primaryKey } from '@mswjs/data'
 import { ModelDictionary } from '@mswjs/data/lib/glossary'
 
-import Env from '../../config/Env'
-
-import initialMockedDb from './db.initial.data.json'
+import Env from 'config/Env'
+import initialMockedDb from 'test/server/db.initial.data.json'
 
 const models: ModelDictionary = {
   posts: {

@@ -1,6 +1,6 @@
-import { RootState, store } from '../../../../store/store'
-import { Post } from '../../types'
-import reducer, { postsActions, selectPosts } from '../posts.slice'
+import reducer, { postsActions, selectPosts } from 'features/posts/store/posts.slice'
+import { Post } from 'features/posts/types'
+import { RootState, store } from 'store/store'
 
 const expectedPosts = [
   { id: '1', body: 'post1', title: 'post1' },

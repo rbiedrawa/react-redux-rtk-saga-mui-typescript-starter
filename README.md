@@ -97,6 +97,12 @@ To enforce conventional commit format on git messages, run below command to use 
 npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
 ```
 
+## Intelij
+
+### Absolute imports
+
+In Settings | Editor | Code Style | TypeScript | Imports, enable Use paths relative to tsconfig.json.
+
 ## Release
 
 [//]: # 'TODO:  add readme for release via Standard Version'

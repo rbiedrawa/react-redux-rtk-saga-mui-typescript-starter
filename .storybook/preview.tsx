@@ -1,11 +1,11 @@
 /* eslint-disable */
 
 import { Provider } from 'react-redux'
-import { history, store } from '../src/store/store'
+import { history, store } from 'store/store'
 import { HistoryRouter as Router } from 'redux-first-history/rr6'
 import React from 'react'
 
-import i18n from '../src/config/i18n'
+import i18n from 'config/i18n'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

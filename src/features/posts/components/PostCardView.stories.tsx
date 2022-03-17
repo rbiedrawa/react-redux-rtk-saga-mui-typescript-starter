@@ -2,7 +2,7 @@ import { Container } from '@mui/material'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 
-import { PostCardView } from '../index'
+import { PostCardView } from 'features/posts/components/PostCardView'
 
 export default {
   title: 'features/components/posts/PostCardView',
