@@ -141,3 +141,4 @@ In Settings | Editor | Code Style | TypeScript | Imports, enable Use paths relat
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
 - [Bulletproof React](https://github.com/alan2207/bulletproof-react)
 - [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet)
+- [i18next-scanner](https://github.com/i18next/i18next-scanner) - Scan your code, extract translation keys/values, and merge them into i18n resource files.
