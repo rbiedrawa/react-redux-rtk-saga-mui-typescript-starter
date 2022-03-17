@@ -3,6 +3,9 @@
 # project
 TODO.md
 
+# storybook
+/storybook-static
+
 # ide
 *.iml
 /.idea
