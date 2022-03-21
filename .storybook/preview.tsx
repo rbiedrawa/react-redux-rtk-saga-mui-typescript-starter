@@ -24,7 +24,7 @@ export const parameters = {
 }
 
 // Start mock service worker
-const { worker } = require('../src/test/server/browser')
+const { worker } = require('../src/test/msw/browser')
 worker.start()
 worker.printHandlers()
 

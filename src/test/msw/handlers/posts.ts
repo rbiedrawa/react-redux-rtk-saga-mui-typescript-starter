@@ -4,7 +4,7 @@ import { rest } from 'msw'
 
 import Env from 'config/Env'
 import { Post } from 'features/posts'
-import { db, persistDb } from 'test/server/db'
+import { db, persistDb } from 'test/msw/db'
 
 const BASE_URL = `${Env.API_BASE_URL}/posts`
 

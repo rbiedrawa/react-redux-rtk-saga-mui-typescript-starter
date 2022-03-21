@@ -5,7 +5,7 @@ import App from 'App'
 import 'config/i18n'
 import 'index.css'
 import reportWebVitals from 'reportWebVitals'
-import { initMockServiceWorker } from 'test/server'
+import { initMockServiceWorker } from 'test/msw'
 
 initMockServiceWorker()
 

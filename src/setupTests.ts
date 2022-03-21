@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 
-import { clearDb } from 'test/server/db'
-import { server } from 'test/server/server'
+import { clearDb } from 'test/msw/db'
+import { server } from 'test/msw/server'
 
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }))
 afterAll(() => server.close())
