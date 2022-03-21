@@ -2,7 +2,27 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Project Structure
+## About
+
+### Built With
+
+* [Typescript](https://www.typescriptlang.org/)
+* [React.js](https://reactjs.org/), [Create React App](https://create-react-app.dev/)
+* [React Router](https://reactrouter.com/), [React Hook Form](https://react-hook-form.com/), [Yup](https://github.com/jquense/yup), [React-i18next](https://react.i18next.com/)
+* [MUI - Material UI](https://mui.com/), [Styled Components](https://styled-components.com/)
+* [Redux](https://redux.js.org/), [Redux Toolkit](https://redux-toolkit.js.org/)
+  , [Redux Saga](https://redux-saga.js.org/), [Redux First History](https://github.com/salvoravida/redux-first-history)
+  , [Redux Logger](https://github.com/LogRocket/redux-logger)
+  , [Redux Saga Test Plan](https://github.com/jfairbank/redux-saga-test-plan)
+* [Mock Service Worker](https://mswjs.io/), [Jest](https://jestjs.io/), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+  , [Cypress](https://www.cypress.io/)
+* [StoryBook](https://storybook.js.org/)
+* [ESLint](https://eslint.org/), [Prettier](https://eslint.org/), [Husky](https://typicode.github.io/husky/#/)
+  , [Commitlint](https://commitlint.js.org/#/)
+  , [Standard Version](https://github.com/conventional-changelog/standard-version)
+  , [Lint-staged](https://github.com/okonet/lint-staged), [Pretty Quick](https://github.com/azz/pretty-quick)
+
+### Project Structure
 
 ```shell
 ./src
@@ -32,113 +52,141 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Getting Started
 
+### Prerequisites
+
+1. [nvm](https://github.com/nvm-sh/nvm)
+2. [Node.js v17](https://nodejs.org/en/)
+3. [Yarn](https://yarnpkg.com/)
+
+### Installation
+
+Install NPM packages:
+
+```shell
+yarn install
+```
+
 ### Development
+
+To start the application in the development mode run:
 
 ```shell
 yarn start
 ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> :memo: **Note:** Application starts in **sandbox-mode**, with all backend calls mocked by [MSW](https://mswjs.io/) library.
+> To disable it change [REACT_APP_MSW_ENABLED](./.env) variable to false.
 
-### Testing
-
-```shell
-yarn test
-```
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> :bulb: **Tip:** Open [http://localhost:3000](http://localhost:3000) to view application in the browser.
 
 ### Build
+
+To build the application for production, run:
 
 ```shell
 yarn build
 ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Testing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Unit / Integration tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Launch the test runner in the interactive watch mode:
+
+```shell
+yarn test
+```
+
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
+information.
+
+Run `yarn coverage` to generate code coverage.
+
+#### E2E tests
+
+To run e2e use below command:
+
+```shell
+yarn test:e2e
+```
+
+> :memo: **Note:** This script will start the server, wait until application is running, execute e2e tests and after that it will shut down the server.
+
+> :bulb: **Tip:** To run [Cypress](https://www.cypress.io/) in interactive mode, start the application and run `yarn cy:open`
+
+### Story Book
+
+Start Storybook in development mode:
+
+```shell
+yarn storybook
+```
+
+To build Storybook as static web application, run the following command inside project's root directory:
+
+```shell
+yarn build-storybook
+```
+
+> :bulb: **Tip:** run `npx http-server ./storybook-static` to preview static web application locally.
 
 ## Code Quality
 
-### ESLint and Prettier
+### Overview
 
 Running the script `yarn format` will format the code style of all TypeScript files.
 
-The script `yarn lint` will run linter in the project.
-If any best practices, standards, or code styles are not meet in code, it will display the actual error or warning.
+The script `yarn lint` will run linter in the project. If any code standards or styles are not met in code, it will
+display the errors or warnings.
 
-Run `yarn lint:fix` command to fix automatically any error found (if the linter knows how to fix it😉) and format code.
+Run `yarn lint:fix` command to format code and fix automatically any error found - if the linter knows how to fix it😉.
 
-### Commit hooks
-
-Enforce code conventions and prevent bad commits with Husky pre-commit hook.
-
-To install and configure Husky, run:
-
-```shell
-npx husky install
-```
-
-To automatically run linter on staged files, run below command to install pre commit hook.
-
-```shell
-npx husky add .husky/pre-commit "yarn run pre-commit"
-```
-
-To enforce conventional commit format on git messages, run below command to use commitlint.
-
-```shell
-npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'
-```
-
-## Intelij
+> :bulb: **Tip:** To enforce code conventions and prevent bad commits this project is setup to use Husky.
+> Husky is used to run validation and format code before every commit.
+> Additionally, it will check if git message is following [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) format.
 
 ### Absolute imports
 
-In Settings | Editor | Code Style | TypeScript | Imports, enable Use paths relative to tsconfig.json.
+Absolute imports should always be configured and used because it makes it easier to move files around and avoid messy
+import paths such as `../../../Component`. Wherever you move the file, all the imports will remain intact.
+
+To enable Absoulte imports in Intelij ide go to `Settings -> Editor -> Code Style -> TypeScript -> Imports` and
+enable **Use paths relative to tsconfig.json**.
 
 ## Release
 
-[//]: # 'TODO:  add readme for release via Standard Version'
+Create release version and generate a changelog file:
+
+```shell
+yarn release
+```
+
+> :memo: **Note:** use `yarn release:first-release` if this is the first release.
+
+> :bulb: **Tip:**  `yarn release:dry-run` - allows you to see what commands would be run, without committing to git or updating files.
+
+## Useful dev tools
+
+- [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+- [Redux DevTools](https://github.com/reduxjs/redux-devtools)
+- [Testing Playground](https://chrome.google.com/webstore/detail/testing-playground/hejbmebodbijjdhflfknehhcgaklhano)
+- [Window Resizer](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh)
+- [React Hook Form - form builder](https://react-hook-form.com/form-builder)
+- [i18next-scanner](https://github.com/i18next/i18next-scanner)
 
 ## References
 
-- [React documentation](https://reactjs.org/)
-- [Redux Saga](https://redux-saga.js.org/)
-- [Redux Style Guide](https://redux.js.org/style-guide/style-guide)
-- [Write Action Types as domain/eventName - Redux Style Guide](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname)
-- [Redux Toolkit](https://redux-toolkit.js.org/introduction/getting-started)
-- [MUI: The React component library you always wanted](https://mui.com/)
-- [React Router](https://reactrouter.com/)
-- [Redux First History](https://github.com/salvoravida/redux-first-history)
-- [Redux Logger](https://github.com/LogRocket/redux-logger)
-- [I18next](https://react.i18next.com/)
-- [JSON Server](https://github.com/typicode/json-server)
-- [ESLint](https://eslint.org/)
-- [Prettier](https://prettier.io/)
-- [Husky](https://typicode.github.io/husky/#/)
-- [commitlint](https://commitlint.js.org/#/) - Lint commit messages
-- [Standard Version](https://github.com/conventional-changelog/standard-version) - A utility for versioning using semver and CHANGELOG generation powered by Conventional Commits.
-- [Mock Service Worker](https://mswjs.io/)
-- [Redux Saga Test Plan](https://github.com/jfairbank/redux-saga-test-plan) - Redux Saga Test Plan aims to embrace both integration testing and unit testing approaches to make testing your sagas easy.
+- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
+- [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)
+- [Redux - style guide](https://redux.js.org/style-guide/style-guide)
+- [Redux Toolkit - Getting Started](https://redux-toolkit.js.org/introduction/gettiĻng-started)
+- [React Hook Form - typescript Support](https://react-hook-form.com/ts)
+- [Bulletproof React](https://github.com/alan2207/bulletproof-react)
+- [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet)
 
 ## Additional Links
 
-- [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react) - Cheatsheets for experienced React developers getting started with TypeScript
 - [React Hook Form vs. Formik: A technical and performance comparison](https://blog.logrocket.com/react-hook-form-vs-formik-comparison/)
-- [React Hook Form - form builder](https://react-hook-form.com/form-builder)
-- [React Hook Form - typescript Support](https://react-hook-form.com/ts)
-- [Redux Style Guide](https://redux.js.org/style-guide/style-guide#write-action-types-as-domaineventname)
 - [MUI - theme switcher](https://mui.com/customization/dark-mode/)
 - [Level up your CSS linting using Stylelint](https://blog.logrocket.com/using-stylelint-improve-lint-css-scss-sass/)
 - [Create React App: A quick setup guide](https://blog.logrocket.com/create-react-app-a-quick-setup-guide-b812f0aad03c/)
-- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
-- [Bulletproof React](https://github.com/alan2207/bulletproof-react)
-- [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet)
-- [i18next-scanner](https://github.com/i18next/i18next-scanner) - Scan your code, extract translation keys/values, and merge them into i18n resource files.
