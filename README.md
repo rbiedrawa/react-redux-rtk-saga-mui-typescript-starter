@@ -107,6 +107,7 @@ Run `yarn coverage` to generate code coverage.
 To run e2e use below command:
 
 ```shell
+yarn build 
 yarn test:e2e
 ```
 
