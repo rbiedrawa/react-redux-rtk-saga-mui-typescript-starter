@@ -39,7 +39,7 @@ export const PostForm = (props: PostFormProps) => {
   const { handleSubmit, reset, control } = methods
 
   return (
-    <Stack sx={{ pt: 4 }} direction="column" spacing={1} justifyContent="center">
+    <Stack sx={{ pt: 0 }} direction="column" spacing={1} justifyContent="center">
       <FormTextField name="title" label={t('home.form.title')} control={control} />
       <FormTextField name="body" label={t('home.form.body')} control={control} />
       <Button onClick={handleSubmit(onSubmitClick)} variant={'contained'}>

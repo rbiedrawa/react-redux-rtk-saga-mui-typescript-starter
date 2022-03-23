@@ -1,5 +1,5 @@
 import { getPosts } from 'features/posts/api/index'
-import fixture from 'test/msw/db.initial.data.json'
+import fixture from 'test/msw/fixtures/db.initial.data.json'
 
 describe('Post API test - MSW example', () => {
   it('should fetch all Posts', async () => {

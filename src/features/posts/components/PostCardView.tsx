@@ -1,10 +1,23 @@
-import { Button, Card, CardActions, CardContent, CardMedia } from '@mui/material'
-import Typography from '@mui/material/Typography'
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import EditIcon from "@mui/icons-material/Edit";
+import { Grid, IconButton, Paper } from "@mui/material";
+import React from "react";
 
-import logoImage from 'features/posts/assets/imgs/logo192.png'
-import { Post } from 'features/posts/types'
+
+import { Post } from "features/posts/types";
+
+const styles = {
+  Icon: {
+    marginLeft: "auto"
+  },
+  Paper: {
+    margin: "auto",
+    padding: 10,
+    display: "flex",
+    alignItems: "center",
+    marginTop: 10
+  }
+};
 
 export type PostCardViewProps = {
   post: Post
@@ -13,35 +26,43 @@ export type PostCardViewProps = {
 }
 
 export const PostCardView = (props: PostCardViewProps) => {
-  const { t } = useTranslation()
 
-  const { post, onDeleteClick, onUpdateClick } = props
+  const { post, onDeleteClick, onUpdateClick } = props;
 
   const handleDeleteClick = () => {
-    onDeleteClick(post)
-  }
+    onDeleteClick(post);
+  };
 
-  const handleUpdateClick = () => onUpdateClick(post)
+  const handleUpdateClick = () => onUpdateClick(post);
 
   return (
     <>
-      <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-        <CardMedia component="img" src={logoImage} alt="random" />
-        <CardContent sx={{ flexGrow: 1 }}>
-          <Typography gutterBottom variant="h5" component="h2">
-            {post.title}
-          </Typography>
-          <Typography>{post.body}</Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small" onClick={handleDeleteClick}>
-            {t('home.buttons.delete')}
-          </Button>
-          <Button size="small" onClick={handleUpdateClick}>
-            {t('home.buttons.update')}
-          </Button>
-        </CardActions>
-      </Card>
+      <Grid
+        spacing={2}
+        xs={12}
+        item
+        key={post.id}
+      >
+        <Paper elevation={2} style={styles.Paper}>
+          <span><strong>{post.title}</strong> - {post.body}</span>
+          <br />
+          <IconButton
+            color="primary"
+            aria-label="Edit"
+            style={styles.Icon}
+            onClick={handleUpdateClick}
+          >
+            <EditIcon />
+          </IconButton>
+          <IconButton
+            color="secondary"
+            aria-label="Delete"
+            onClick={handleDeleteClick}
+          >
+            <DeleteForeverIcon />
+          </IconButton>
+        </Paper>
+      </Grid>
     </>
-  )
-}
+  );
+};

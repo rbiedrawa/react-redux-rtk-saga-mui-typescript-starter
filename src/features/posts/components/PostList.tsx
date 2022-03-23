@@ -1,9 +1,9 @@
-import { Grid } from '@mui/material'
-import React from 'react'
+import { Grid } from "@mui/material";
+import React from "react";
 
-import { PostCardView } from 'features/posts/components/PostCardView'
+import { PostCardView } from "features/posts/components/PostCardView";
 
-import { Post } from '../types'
+import { Post } from "../types";
 
 export type PostListProps = {
   posts: Post[]
@@ -12,17 +12,15 @@ export type PostListProps = {
 }
 
 export const PostList = (props: PostListProps) => {
-  const { posts, onDeletePost, onUpdatePost } = props
+  const { posts, onDeletePost, onUpdatePost } = props;
 
   return (
     <>
-      <Grid container spacing={4}>
+      <Grid container>
         {posts.map(post => (
-          <Grid item key={post.id} xs={12} sm={6} md={4}>
-            <PostCardView post={post} onDeleteClick={onDeletePost} onUpdateClick={onUpdatePost} />
-          </Grid>
+          <PostCardView data-test-id={post.title} key={post.id} post={post} onDeleteClick={onDeletePost} onUpdateClick={onUpdatePost} />
         ))}
       </Grid>
     </>
-  )
-}
+  );
+};

@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": "v-UDRFY8Vqil3MXP0UPyE",
+      "title": "Redux-Saga",
+      "body": "An intuitive Redux side effect manager."
+    },
+    {
+      "id": "fxhwAGn0MGcQzbccTTIs5",
+      "title": "Redux Toolkit",
+      "body": "The official, opinionated, batteries-included toolset for efficient Redux development."
+    }
+  ]
+}

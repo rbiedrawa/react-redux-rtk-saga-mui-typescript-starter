@@ -7,6 +7,6 @@ describe('Feature - Posts', () => {
 
     cy.findByRole('button', { name: /add new post/i }).click()
 
-    cy.findByRole('heading', { name: /hello from cypress!/i }).should('exist')
+    cy.findByText(/hello from cypress!/i ).should('exist')
   })
 })
