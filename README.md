@@ -219,3 +219,6 @@ yarn release
 - [What is Redux Ducks?](https://medium.com/@matthew.holman/what-is-redux-ducks-46bcb1ad04b7)
 - [Redux DevTools: Tips and tricks for faster debugging](https://blog.logrocket.com/redux-devtools-tips-tricks-for-faster-debugging/)
 
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
