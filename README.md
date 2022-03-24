@@ -73,7 +73,7 @@ with [Typescript](https://www.typescriptlang.org/), [Redux Toolkit](https://redu
     └── msw
 ```
 
-## Getting Started
+## 👨‍💻 Getting Started
 
 ### Prerequisites
 
