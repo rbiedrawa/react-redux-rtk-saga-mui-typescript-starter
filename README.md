@@ -104,9 +104,30 @@ with [Typescript](https://www.typescriptlang.org/), [Redux Toolkit](https://redu
 
 ### Prerequisites
 
-1. [nvm](https://github.com/nvm-sh/nvm)
-2. [Node.js v17](https://nodejs.org/en/)
-3. [Yarn](https://yarnpkg.com/)
+<details>
+  <summary><a href="https://github.com/nvm-sh/nvm">nvm</a></summary>
+
+  ```shell
+  brew install nvm
+  ```
+
+</details>
+<details>
+  <summary><a href="https://nodejs.org/en/">Node.js v17.4.0</a></summary>
+
+  ```shell
+  nvm install v17.4.0
+  ```
+
+</details>
+<details>
+  <summary><a href="https://yarnpkg.com/">Yarn</a></summary>
+
+  ```shell
+  npm install --global yarn
+  ```
+
+</details>
 
 ### Installation
 
