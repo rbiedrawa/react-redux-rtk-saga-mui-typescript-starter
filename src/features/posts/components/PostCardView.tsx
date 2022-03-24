@@ -38,7 +38,6 @@ export const PostCardView = (props: PostCardViewProps) => {
   return (
     <>
       <Grid
-        spacing={2}
         xs={12}
         item
         key={post.id}
