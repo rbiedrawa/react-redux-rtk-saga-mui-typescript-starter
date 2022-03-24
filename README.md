@@ -139,7 +139,7 @@ yarn build && yarn test:e2e
 
 > :bulb: **Tip:** To run [Cypress](https://www.cypress.io/) in interactive mode, start the application and run `yarn cy:open`
 
-### Story Book
+### Storybook
 
 Start Storybook in development mode:
 
@@ -155,7 +155,7 @@ yarn build-storybook
 
 > :bulb: **Tip:** run `npx http-server ./storybook-static` to preview static web application locally.
 
-## Code Quality
+## 👮 Code Quality
 
 ### Overview
 
@@ -178,7 +178,7 @@ import paths such as `../../../Component`. Wherever you move the file, all the i
 To enable Absoulte imports in Intelij ide go to `Settings -> Editor -> Code Style -> TypeScript -> Imports` and
 enable **Use paths relative to tsconfig.json**.
 
-## Release
+## 😈 Release
 
 Create release version and generate a changelog file:
 
@@ -190,7 +190,7 @@ yarn release
 
 > :bulb: **Tip:**  `yarn release:dry-run` - allows you to see what commands would be run, without committing to git or updating files.
 
-## Useful dev tools
+## 🛠 Useful dev tools
 
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 - [Redux DevTools](https://github.com/reduxjs/redux-devtools)
@@ -199,7 +199,7 @@ yarn release
 - [React Hook Form - form builder](https://react-hook-form.com/form-builder)
 - [i18next-scanner](https://github.com/i18next/i18next-scanner)
 
-## References
+## 🎓 References
 
 - [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
 - [React+TypeScript Cheatsheets](https://github.com/typescript-cheatsheets/react)
@@ -209,7 +209,7 @@ yarn release
 - [Bulletproof React](https://github.com/alan2207/bulletproof-react)
 - [Jest cheat sheet](https://github.com/sapegin/jest-cheat-sheet)
 
-## Additional Links
+## 👨‍🎓 Additional Links
 
 - [React Hook Form vs. Formik: A technical and performance comparison](https://blog.logrocket.com/react-hook-form-vs-formik-comparison/)
 - [MUI - theme switcher](https://mui.com/customization/dark-mode/)
