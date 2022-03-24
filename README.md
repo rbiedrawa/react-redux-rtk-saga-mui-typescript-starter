@@ -5,6 +5,33 @@ with [Typescript](https://www.typescriptlang.org/), [Redux Toolkit](https://redu
 [Redux Saga](https://redux-saga.js.org/), [React Hook Form](https://react-hook-form.com/)
 , [React-i18next](https://react.i18next.com/) and [Material UI](https://mui.com/).
 
+## Table of Content
+
+<!-- toc -->
+
+- [About](#about)
+  * [Features](#features)
+  * [Project Structure](#project-structure)
+- [Getting Started](#-getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+  * [Development](#development)
+  * [Build](#build)
+  * [Testing](#testing)
+    + [Unit / Integration tests](#unit--integration-tests)
+    + [E2E tests](#e2e-tests)
+  * [Storybook](#storybook)
+- [Code Quality](#-code-quality)
+  * [Overview](#overview)
+  * [Absolute imports](#absolute-imports)
+- [Release](#-release)
+- [Useful dev tools](#-useful-dev-tools)
+- [References](#-references)
+- [Additional Links](#-additional-links)
+- [License](#license)
+
+<!-- tocstop -->
+
 ## About
 
 ![about.gif](./_docs/img/about.gif)
