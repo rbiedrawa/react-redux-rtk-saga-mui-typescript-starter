@@ -1,30 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Env } from 'config/Env'
 import { Post } from 'features/posts/types'
+import makeApi from "libs/core/configureAxios";
 
-const POSTS_BASE_URL = `${Env.API_BASE_URL}/posts`
+const api = makeApi(`${Env.API_BASE_URL}`);
 
-export const getPosts = async (): Promise<Post[]> => fetch(POSTS_BASE_URL).then(res => res.json())
+const POSTS_BASE_URL = `/posts`
 
-export const createPost = async (post: Post): Promise<Post> =>
-  fetch(POSTS_BASE_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(post),
-  }).then(res => res.json())
+export const getPosts = (): Promise<Post[]> => api.get(POSTS_BASE_URL)
 
-export const updatePost = async (post: Post): Promise<Post> =>
-  fetch(`${POSTS_BASE_URL}/${post.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(post),
-  }).then(res => res.json())
+export const createPost = (post: Post): Promise<Post> => api.post(POSTS_BASE_URL, post);
 
-export const deletePost = async (post: Post): Promise<Post> =>
-  fetch(`${POSTS_BASE_URL}/${post.id}`, {
-    method: 'DELETE',
-  }).then(() => post)
+export const updatePost = (post: Post): Promise<Post> => api.put(`${POSTS_BASE_URL}/${post.id}`, post)
+
+export const deletePost =  (post: Post): Promise<Post> => api.delete(`${POSTS_BASE_URL}/${post.id}`, { data: post})
