@@ -1,31 +1,52 @@
 # react-redux-rtk-saga-materialui-typescript-starter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A boilerplate [Create React App](https://github.com/facebook/create-react-app)
+with [Typescript](https://www.typescriptlang.org/), [Redux Toolkit](https://redux-toolkit.js.org/),
+[Redux Saga](https://redux-saga.js.org/), [React Hook Form](https://react-hook-form.com/)
+, [React-i18next](https://react.i18next.com/) and [Material UI](https://mui.com/).
 
 ## About
 
-### Built With
+![about.gif](./_docs/img/about.gif)
 
-* [Typescript](https://www.typescriptlang.org/)
-* [React.js](https://reactjs.org/), [Create React App](https://create-react-app.dev/)
-* [React Router](https://reactrouter.com/), [React Hook Form](https://react-hook-form.com/), [Yup](https://github.com/jquense/yup), [React-i18next](https://react.i18next.com/)
-* [MUI - Material UI](https://mui.com/), [Styled Components](https://styled-components.com/)
-* [Redux](https://redux.js.org/), [Redux Toolkit](https://redux-toolkit.js.org/)
-  , [Redux Saga](https://redux-saga.js.org/), [Redux First History](https://github.com/salvoravida/redux-first-history)
-  , [Redux Logger](https://github.com/LogRocket/redux-logger)
-  , [Redux Saga Test Plan](https://github.com/jfairbank/redux-saga-test-plan)
-* [Mock Service Worker](https://mswjs.io/), [Jest](https://jestjs.io/), [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-  , [Cypress](https://www.cypress.io/)
-* [StoryBook](https://storybook.js.org/)
-* [ESLint](https://eslint.org/), [Prettier](https://eslint.org/), [Husky](https://typicode.github.io/husky/#/)
-  , [Commitlint](https://commitlint.js.org/#/)
-  , [Standard Version](https://github.com/conventional-changelog/standard-version)
-  , [Lint-staged](https://github.com/okonet/lint-staged), [Pretty Quick](https://github.com/azz/pretty-quick)
+### Features
+
+1. [React.js](https://reactjs.org/) CRUD example with Redux Saga.
+2. [Typescript](https://www.typescriptlang.org/) for type safety
+3. Core libraries
+   * [Redux](https://redux.js.org/)
+   * [Redux Toolkit](https://redux-toolkit.js.org/)
+   * [Redux Saga](https://redux-saga.js.org/)
+   * [Redux First History](https://github.com/salvoravida/redux-first-history)
+   * [Redux Logger](https://github.com/LogRocket/redux-logger)
+   * [React Router](https://reactrouter.com/)
+   * [React Hook Form](https://react-hook-form.com/)
+   * [Yup](https://github.com/jquense/yup)
+   * [Axios](https://github.com/axios/axios)
+   * [React-i18next](https://react.i18next.com/)
+   * [MUI - Material UI](https://mui.com/)
+   * [Styled Components](https://styled-components.com/)
+4. Test libraries
+   * [Jest](https://jestjs.io/)
+   * [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+   * [Redux Saga Test Plan](https://github.com/jfairbank/redux-saga-test-plan)
+   * [Cypress](https://www.cypress.io/)
+5. Other tools/libraries
+   * [StoryBook](https://storybook.js.org/)
+   * [Mock Service Worker](https://mswjs.io/)
+   * [ESLint](https://eslint.org/), [Prettier](https://eslint.org/), [Lint-staged](https://github.com/okonet/lint-staged), [Pretty Quick](https://github.com/azz/pretty-quick)
+   * [Husky](https://typicode.github.io/husky/#/)
+   * [Commitlint](https://commitlint.js.org/#/)
+   * [Standard Version](https://github.com/conventional-changelog/standard-version)
+6. Opinionated folder structure
+7. Internationalization for react app using [React-i18next](https://react.i18next.com/)
+8. Material UI Dark Mode support
 
 ### Project Structure
 
 ```shell
 ./src
+├── App.tsx # Application entrypoint
 ├── assets # assets folder contains all the static files (images, fonts, etc).
 ├── components # shared components
 ├── config # global configuration, env variables etc.
@@ -42,12 +63,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 │   │   └── types # 'feature' typescript types
 │   └── another_feature # 'another_feature'
 ├── hooks # shared hooks
-├── libs  # libraries imported or exported that can be used in different projects
+├── libs # libraries imported or exported that can be used in different projects
+│   ├── core
 │   └── ui
 ├── pages  # contains all application pages
 ├── routes # routes configuration
 ├──  store # root store and store settings
-└── App.tsx # Application entrypoint
+└── test/ # contains test utilities and Mock Service Worker setup
+    └── msw
 ```
 
 ## Getting Started
@@ -104,11 +127,12 @@ Run `yarn coverage` to generate code coverage.
 
 #### E2E tests
 
+![posts.spec.ts](./_docs/img/cypress.gif)
+
 To run e2e use below command:
 
 ```shell
-yarn build 
-yarn test:e2e
+yarn build && yarn test:e2e
 ```
 
 > :memo: **Note:** This script will start the server, wait until application is running, execute e2e tests and after that it will shut down the server.
