@@ -1,29 +1,48 @@
-# react-redux-rtk-saga-materialui-typescript-starter
+<h1 align="center">react-redux-rtk-saga-materialui-typescript-starter</h1>
+
+<div align="center">
+
+![ts](https://img.shields.io/badge/TypeScript%20-%23F7DF1E.svg?logo=typescript&logoColor=white&color=3178C6)
+![react](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![redux](https://img.shields.io/badge/Redux%20Toolkit-593D88?logo=redux&logoColor=white)
+![redux-saga](https://img.shields.io/badge/Redux%20Saga-86D46B?logo=redux%20saga&logoColor=white&color=74C417)
+![mui](https://img.shields.io/badge/Material%20UI-007FFF?logo=mui&logoColor=white)
+![storybook](https://img.shields.io/badge/Storybook-FF4785?logo=storybook&logoColor=white)
+![jest](https://img.shields.io/badge/Jest%20-%23F7DF1E.svg?logo=jest&logoColor=white&color=74C417)
+![cypress](https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=white)
+![license](https://img.shields.io/github/license/rbiedrawa/kafka-monitoring)
+</div>
+
+<div align="center">
 
 A boilerplate [Create React App](https://github.com/facebook/create-react-app)
 with [Typescript](https://www.typescriptlang.org/), [Redux Toolkit](https://redux-toolkit.js.org/),
 [Redux Saga](https://redux-saga.js.org/), [React Hook Form](https://react-hook-form.com/)
 , [React-i18next](https://react.i18next.com/) and [Material UI](https://mui.com/).
 
+</div>
+
+********
+
 ## Table of Content
 
 <!-- toc -->
 
 - [About](#about)
-  * [Features](#features)
-  * [Project Structure](#project-structure)
+    * [Features](#features)
+    * [Project Structure](#project-structure)
 - [Getting Started](#-getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-  * [Development](#development)
-  * [Build](#build)
-  * [Testing](#testing)
-    + [Unit / Integration tests](#unit--integration-tests)
-    + [E2E tests](#e2e-tests)
-  * [Storybook](#storybook)
+    * [Prerequisites](#prerequisites)
+    * [Installation](#installation)
+    * [Development](#development)
+    * [Build](#build)
+    * [Testing](#testing)
+        + [Unit / Integration tests](#unit--integration-tests)
+        + [E2E tests](#e2e-tests)
+    * [Storybook](#storybook)
 - [Code Quality](#-code-quality)
-  * [Overview](#overview)
-  * [Absolute imports](#absolute-imports)
+    * [Overview](#overview)
+    * [Absolute imports](#absolute-imports)
 - [Release](#-release)
 - [Useful dev tools](#-useful-dev-tools)
 - [References](#-references)
@@ -34,37 +53,42 @@ with [Typescript](https://www.typescriptlang.org/), [Redux Toolkit](https://redu
 
 ## About
 
+<div align="center">
+
 ![about.gif](./_docs/img/about.gif)
+
+</div>    
 
 ### Features
 
 1. [React.js](https://reactjs.org/) CRUD example with Redux Saga.
 2. [Typescript](https://www.typescriptlang.org/) for type safety
 3. Core libraries
-   * [Redux](https://redux.js.org/)
-   * [Redux Toolkit](https://redux-toolkit.js.org/)
-   * [Redux Saga](https://redux-saga.js.org/)
-   * [Redux First History](https://github.com/salvoravida/redux-first-history)
-   * [Redux Logger](https://github.com/LogRocket/redux-logger)
-   * [React Router](https://reactrouter.com/)
-   * [React Hook Form](https://react-hook-form.com/)
-   * [Yup](https://github.com/jquense/yup)
-   * [Axios](https://github.com/axios/axios)
-   * [React-i18next](https://react.i18next.com/)
-   * [MUI - Material UI](https://mui.com/)
-   * [Styled Components](https://styled-components.com/)
+    * [Redux](https://redux.js.org/)
+    * [Redux Toolkit](https://redux-toolkit.js.org/)
+    * [Redux Saga](https://redux-saga.js.org/)
+    * [Redux First History](https://github.com/salvoravida/redux-first-history)
+    * [Redux Logger](https://github.com/LogRocket/redux-logger)
+    * [React Router](https://reactrouter.com/)
+    * [React Hook Form](https://react-hook-form.com/)
+    * [Yup](https://github.com/jquense/yup)
+    * [Axios](https://github.com/axios/axios)
+    * [React-i18next](https://react.i18next.com/)
+    * [MUI - Material UI](https://mui.com/)
+    * [Styled Components](https://styled-components.com/)
 4. Test libraries
-   * [Jest](https://jestjs.io/)
-   * [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-   * [Redux Saga Test Plan](https://github.com/jfairbank/redux-saga-test-plan)
-   * [Cypress](https://www.cypress.io/)
+    * [Jest](https://jestjs.io/)
+    * [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
+    * [Redux Saga Test Plan](https://github.com/jfairbank/redux-saga-test-plan)
+    * [Cypress](https://www.cypress.io/)
 5. Other tools/libraries
-   * [StoryBook](https://storybook.js.org/)
-   * [Mock Service Worker](https://mswjs.io/)
-   * [ESLint](https://eslint.org/), [Prettier](https://eslint.org/), [Lint-staged](https://github.com/okonet/lint-staged), [Pretty Quick](https://github.com/azz/pretty-quick)
-   * [Husky](https://typicode.github.io/husky/#/)
-   * [Commitlint](https://commitlint.js.org/#/)
-   * [Standard Version](https://github.com/conventional-changelog/standard-version)
+    * [StoryBook](https://storybook.js.org/)
+    * [Mock Service Worker](https://mswjs.io/)
+    * [ESLint](https://eslint.org/), [Prettier](https://eslint.org/)
+      , [Lint-staged](https://github.com/okonet/lint-staged), [Pretty Quick](https://github.com/azz/pretty-quick)
+    * [Husky](https://typicode.github.io/husky/#/)
+    * [Commitlint](https://commitlint.js.org/#/)
+    * [Standard Version](https://github.com/conventional-changelog/standard-version)
 6. Opinionated folder structure
 7. Internationalization for react app using [React-i18next](https://react.i18next.com/)
 8. Material UI Dark Mode support
@@ -236,7 +260,7 @@ yarn release
 
 > :memo: **Note:** use `yarn release:first-release` if this is the first release.
 
-> :bulb: **Tip:**  `yaĻrn release:dry-run` - allows you to see what commands would be run, without committing to git or updating files.
+> :bulb: **Tip:**  `yarn release:dry-run` - allows you to see what commands would be run, without committing to git or updating files.
 
 ## 🛠 Useful dev tools
 
