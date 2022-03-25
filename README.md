@@ -137,7 +137,7 @@ with [Typescript](https://www.typescriptlang.org/), [Redux Toolkit](https://redu
 
 </details>
 <details>
-  <summary><a href="https://nodejs.org/en/">Node.js v17.4.0</a></summary>
+  <summary><a href="https://nodejs.org/en/">Node.js v17</a></summary>
 
   ```shell
   nvm install v17.4.0
@@ -257,6 +257,8 @@ Create release version and generate a changelog file:
 ```shell
 GITHUB_TOKEN=YOUR-TOKEN yarn release
 ```
+
+> :bulb: **Tip:**  `--no-ci` - allows you to trigger release from no ci environment e.g. local
 
 > :bulb: **Tip:**  `yarn release:dry-run` - allows you to see what commands would be run, without committing to git or updating files.
 
