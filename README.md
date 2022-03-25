@@ -88,7 +88,7 @@ with [Typescript](https://www.typescriptlang.org/), [Redux Toolkit](https://redu
       , [Lint-staged](https://github.com/okonet/lint-staged), [Pretty Quick](https://github.com/azz/pretty-quick)
     * [Husky](https://typicode.github.io/husky/#/)
     * [Commitlint](https://commitlint.js.org/#/)
-    * [Standard Version](https://github.com/conventional-changelog/standard-version)
+    * [Semantic Release](https://github.com/semantic-release/semantic-release)
 6. Opinionated folder structure
 7. Internationalization for react app using [React-i18next](https://react.i18next.com/)
 8. Material UI Dark Mode support
@@ -255,10 +255,8 @@ enable **Use paths relative to tsconfig.json**.
 Create release version and generate a changelog file:
 
 ```shell
-yarn release
+GITHUB_TOKEN=YOUR-TOKEN yarn release
 ```
-
-> :memo: **Note:** use `yarn release:first-release` if this is the first release.
 
 > :bulb: **Tip:**  `yarn release:dry-run` - allows you to see what commands would be run, without committing to git or updating files.
 
