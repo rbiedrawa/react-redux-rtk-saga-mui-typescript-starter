@@ -1,4 +1,4 @@
-<h1 align="center">react-redux-rtk-saga-materialui-typescript-starter</h1>
+<h1 align="center">react-redux-rtk-saga-mui-typescript-starter</h1>
 
 <div align="center">
 
