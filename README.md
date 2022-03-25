@@ -236,7 +236,7 @@ yarn release
 
 > :memo: **Note:** use `yarn release:first-release` if this is the first release.
 
-> :bulb: **Tip:**  `yarn release:dry-run` - allows you to see what commands would be run, without committing to git or updating files.
+> :bulb: **Tip:**  `yaĻrn release:dry-run` - allows you to see what commands would be run, without committing to git or updating files.
 
 ## 🛠 Useful dev tools
 
@@ -266,6 +266,7 @@ yarn release
 - [Using TypeScript with Redux Toolkit](https://blog.logrocket.com/using-typescript-with-redux-toolkit/)
 - [What is Redux Ducks?](https://medium.com/@matthew.holman/what-is-redux-ducks-46bcb1ad04b7)
 - [Redux DevTools: Tips and tricks for faster debugging](https://blog.logrocket.com/redux-devtools-tips-tricks-for-faster-debugging/)
+- [Remove React.FC from Typescript template](https://github.com/facebook/create-react-app/pull/8177)
 
 ## License
 
